@@ -5,6 +5,8 @@ using System;
 using eMovieTicket.Data.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
 
 namespace eMovieTicket
 {
@@ -22,11 +24,15 @@ namespace eMovieTicket
             builder.Services.AddScoped<IMoviesService, MoviesService>();
             builder.Services.AddScoped<IOrdersService, OrdersService>();
 
-            //string connString = builder.Configuration.GetConnectionString("DefaultConnection");
+            string connString = builder.Configuration.GetConnectionString("DefaultConnection")!;
+            connString = connString.Replace("%DB_HOST%", builder.Configuration["DB_HOST"])
+                                           .Replace("%DB_NAME%", builder.Configuration["DB_NAME"])
+                                           .Replace("%DB_USER%", builder.Configuration["DB_USER"])
+                                           .Replace("%DB_PASSWORD%", builder.Configuration["DB_PASSWORD"]);
+
             builder.Services.AddDbContext<AppDbContext>(options =>
             {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-
+                options.UseMySql(connString, ServerVersion.AutoDetect(connString));
             });
 
             builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -72,6 +78,15 @@ namespace eMovieTicket
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            var supportedCultures = new[] { new CultureInfo("en-IN") };
+            var localizationOptions = new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("en-IN"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            };
+            app.UseRequestLocalization(localizationOptions);
 
             app.MapControllerRoute(
                 name: "default",

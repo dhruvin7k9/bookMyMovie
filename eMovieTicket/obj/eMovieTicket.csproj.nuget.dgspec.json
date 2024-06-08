@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Assignment Backup\\WAD\\PROJECTS\\eMovieTicket\\eMovieTicket\\eMovieTicket.csproj": {}
+    "D:\\Projects\\c#\\dot NET framework & core\\eMovieTicket\\eMovieTicket\\eMovieTicket.csproj": {}
   },
   "projects": {
-    "D:\\Assignment Backup\\WAD\\PROJECTS\\eMovieTicket\\eMovieTicket\\eMovieTicket.csproj": {
+    "D:\\Projects\\c#\\dot NET framework & core\\eMovieTicket\\eMovieTicket\\eMovieTicket.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Assignment Backup\\WAD\\PROJECTS\\eMovieTicket\\eMovieTicket\\eMovieTicket.csproj",
+        "projectUniqueName": "D:\\Projects\\c#\\dot NET framework & core\\eMovieTicket\\eMovieTicket\\eMovieTicket.csproj",
         "projectName": "eMovieTicket",
-        "projectPath": "D:\\Assignment Backup\\WAD\\PROJECTS\\eMovieTicket\\eMovieTicket\\eMovieTicket.csproj",
+        "projectPath": "D:\\Projects\\c#\\dot NET framework & core\\eMovieTicket\\eMovieTicket\\eMovieTicket.csproj",
         "packagesPath": "C:\\Users\\Dhruvin\\.nuget\\packages\\",
-        "outputPath": "D:\\Assignment Backup\\WAD\\PROJECTS\\eMovieTicket\\eMovieTicket\\obj\\",
+        "outputPath": "D:\\Projects\\c#\\dot NET framework & core\\eMovieTicket\\eMovieTicket\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dhruvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -58,6 +58,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.11, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
