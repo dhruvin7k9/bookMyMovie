@@ -1,6 +1,8 @@
 # BookMyMovie
 Online movie ticket booking website made with .net core 7 and entity framework. Users can buy movie ticket and track their orders while Admin can manage movie and cinema and view order details of users.
 
+### Try live <a href='https://book-my-movie.onrender.com'>here</a>
+
 ### Docker image : https://hub.docker.com/r/dhruvink79/book-my-movie
 1. Pull Docker image for the project:
 ```sh
@@ -15,7 +17,7 @@ DB_USER= \
 DB_PASSWORD= \
 ```
 
-#### Steps for running app :
+### Steps for running app :
 
 1. clone the repository
 
